@@ -11,12 +11,18 @@ def main():
     dbg = WindowsDebugger()
     dbg.attach(pid)
 
+    # ✅ Check if attach failed
+    if not dbg.process_handle:
+        print("[!] Could not attach to process. Exiting debugger.")
+        return  # Exit immediately if attach failed
+
     while True:
         print("\nChoose an action:")
         print("1 - Read memory")
         print("2 - Suspend process (halt)")
         print("3 - Resume process")
         print("4 - Detach and exit")
+        print("5 - Inspect thread registers")
         choice = input("Enter your choice: ").strip()
 
         if choice == '1':
@@ -39,6 +45,9 @@ def main():
         elif choice == '4':
             dbg.detach()
             break
+
+        elif choice == '5':
+            dbg.inspect_registers()
 
         else:
             print("[!] Invalid option. Try again.")
