@@ -11,7 +11,7 @@ def main():
     dbg = WindowsDebugger()
     dbg.attach(pid)
 
-    # ✅ Check if attach failed
+    # Check if attach failed
     if not dbg.process_handle:
         print("[!] Could not attach to process. Exiting debugger.")
         return  # Exit immediately if attach failed
