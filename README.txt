@@ -50,7 +50,7 @@ Terminal 2: (Run Debugger)
 4. Attach to the printed PID and interact with the process.
 
 -------------------------------------
-🛠 Debugger Features:
+Debugger Features:
 -------------------------------------
 
  Attach to a running process using PID  
